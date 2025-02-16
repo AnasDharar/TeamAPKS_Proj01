@@ -5,9 +5,23 @@
     box-sizing: border-box;
 }
 .navbar{
+    border: 1px solid black;
+    width: 100%;
+    padding: 2%;
+    display: block;
     position: absolute;
 }
+.navbar .logo{
+    float: left;
+}
+.navbar .get-started{
+    float: right;
+}
 .first-view{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     position: absolute;
     height: 100vh;
     width: 100vw;
