@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    text-decoration: none;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.navbar{
+    position: absolute;
+}
+.first-view{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    border: 5px solid blue;
+}
