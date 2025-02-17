@@ -90,3 +90,50 @@ body {
     font-size: 2vw;
     margin: 1vw;
 }
+
+
+/* Arranging images on our webpage */
+
+.product{
+    position: absolute;
+}
+.product .oreo{
+    position: absolute;
+    top: 30vh;
+    left: -10vw;
+    display: block;
+    height: 15vw;
+    width: auto;
+    transform: rotate(15deg);
+    /* width: 20%; */
+    z-index: -1;
+    transition: 1s;
+    animation: move 2s infinite linear;
+}
+.product .bourbon{
+    position: absolute;
+    top: 15vh;
+    left: -8vw;
+    display: block;
+    height: 10vw;
+    width: auto;
+    transform: rotate(-5deg);
+    /* width: 20%; */
+    z-index: -1;
+    transition: 1s;
+}
+.product .shampoo{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 65vh;
+    left: 2vw;
+    display: block;
+    height: 30vw;
+    width: auto;
+    transform: rotate(20deg);
+    z-index: -1;
+    transition: 1s;
+}
+@keyframes move {
+    
+}
