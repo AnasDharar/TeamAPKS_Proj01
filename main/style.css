@@ -4,27 +4,89 @@
     padding: 0%;
     box-sizing: border-box;
 }
-.navbar{
-    border: 1px solid black;
+
+body {
+    /* background-color: rgb(36, 36, 36); */
+    color: white;
+    /* background-image: url("../vectors/back01.png"); */
+    background-color: #242424; /* Fallback background color */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.navbar {
+    border: 1px solid white;
     width: 100%;
     padding: 2%;
     display: block;
     position: absolute;
 }
-.navbar .logo{
+
+.navbar .logo {
     float: left;
+    font-family: 'Zain', cursive;
+    font-weight: lighter;
+    color: white;
+    font-size: 2vw;
+
 }
-.navbar .get-started{
+
+.navbar .get-started {
+    color: white;
+    font-family: 'Zain', cursive;
+    font-weight: lighter;
     float: right;
+    font-size: 2vw;
 }
-.first-view{
+
+.first-view {
 
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
     height: 100vh;
     width: 100vw;
     text-align: center;
-    border: 5px solid blue;
+    /* border: 5px solid blue; */
+}
+
+.first-view-title {
+    font-family: 'Gabarito', sans-serif;
+    font-weight: 800;
+    font-size: 6vw;
+    width: 60%;
+    background: linear-gradient(to right,
+            #50a956,
+            #4cb453,
+            #7be082,
+            #a3ffa9,
+            #7be082,
+            #4cb453,
+            #50a956);
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradientAnim 3s linear infinite;
+}
+
+@keyframes gradientAnim {
+    0% {
+        background-position: 200% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+.first-view-subtitle {
+    font-family: 'Zain', cursive;
+    width: 60%;
+    font-size: 2vw;
+    margin: 1vw;
 }
