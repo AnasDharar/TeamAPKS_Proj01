@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project Reveal with Cards Animation</title>
   <style>
+    /* Reset & Basic Setup */
     * {
-      margin: 0; 
-      padding: 0; 
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
     body {
       font-family: Arial, sans-serif;
       background: url('bgfinalpp.webp') no-repeat center center fixed;
-      background-size: 70%;
+      background-size: cover;
       background-position: center;
       background-attachment: fixed;
       background-color: #000;
@@ -24,37 +25,7 @@
       position: relative;
       z-index: 1;
     }
-    .bag-container {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      z-index: 5;
-      display: block;
-      height: 300px;
-    }
-    .bag-container img {
-      width: 30vw;
-      height: auto;
-      pointer-events: none;
-      left: -15vh;
-      position: absolute;
-      bottom: -33vh;
-    }
-    .project-popup {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translate(-50%, 20px) scale(0.8);
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      opacity: 0;
-      transition: all 0.5s ease;
-      white-space: nowrap;
-    }
+    /* Pinned section for the cards */
     #about-capability-cards {
       position: relative;
       width: 100vw;
@@ -62,14 +33,22 @@
       margin: 0 auto;
       z-index: 3;
     }
-    .about-capability-card {
+    /* Wrapper for each card (for continuous bobbing) */
+    .card-wrapper {
       position: absolute;
-      width: 350px;
-      height: 450px;
+      /* width: 325px; 
+      height: 350px; */
+      width: 22vw;
+      height: 25vw;
       top: 50%;
       left: 50%;
-      transform-style: preserve-3d;
       transform: translate(-50%, 0);
+    }
+    /* Glass-style card (your original style) */
+    .about-capability-card {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
       background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
@@ -86,30 +65,66 @@
       text-align: center;
       padding: 20px;
     }
+    /* Bag container (stays on top) */
+    .bag-container {
+      /* border: 1px solid black; */
+      position: fixed;
+      bottom: -10vw;
+      left: 60vw;
+      transform: translateX(-50%);
+      height: 50vh;
+      width: 50vw;
+      z-index: 5;
+      display: block;
+    }
+    .bag-container img {
+      width: 30vw;
+      height: auto;
+      pointer-events: none;
+      position: absolute;
+    }
+    .project-popup {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%, 20px) scale(0.8);
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: all 0.5s ease;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
   <div class="scroll-section">
     <section id="about-capability-cards">
-      <div class="about-capability-card card1">
-        Clear Ingredient Breakdown
-        <br />
-        <small>Understand product labels easily with simplified explanations.</small>
+      <!-- Each card is wrapped in a .card-wrapper -->
+      <div class="card-wrapper">
+        <div class="about-capability-card card1">
+          Clear Ingredient Breakdown<br>
+          <small>Understand product labels easily with simplified explanations.</small>
+        </div>
       </div>
-      <div class="about-capability-card card2">
-        Personalized Recommendations
-        <br />
-        <small>Get tailored suggestions based on your needs.</small>
+      <div class="card-wrapper">
+        <div class="about-capability-card card2">
+          Personalized Recommendations<br>
+          <small>Get tailored suggestions based on your needs.</small>
+        </div>
       </div>
-      <div class="about-capability-card card3">
-        Authentic Product Ratings
-        <br />
-        <small>Data-backed ratings for reliable choices.</small>
+      <div class="card-wrapper">
+        <div class="about-capability-card card3">
+          Authentic Product Ratings<br>
+          <small>Data-backed ratings for reliable choices.</small>
+        </div>
       </div>
-      <div class="about-capability-card card4">
-        Community Database
-        <br />
-        <small>User-driven product information database.</small>
+      <div class="card-wrapper">
+        <div class="about-capability-card card4">
+          Community Database<br>
+          <small>User-driven product information database.</small>
+        </div>
       </div>
     </section>
   </div>
@@ -119,26 +134,27 @@
     <div class="project-popup" id="projectPopup">OUR PROJECT NAME</div>
   </div>
   
+  <!-- GSAP & ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  
   <script>
     gsap.registerPlugin(ScrollTrigger);
     
-    // Updated final positions:
-    // - Card 1 and Card 2 remain as before.
-    // - Card 3 and Card 4 are shifted further right for extra spacing.
+    /* Final positions for the inner card animation.
+       Adjusted for wider separation between left and right groups,
+       and the rightmost card now stays inside the viewport. */
     const finalPositions = [
-      { x: -570, y: -350 }, // Card 1
-      { x: -190, y: -350 }, // Card 2 (spacing with Card 1 is unchanged)
-      { x: 210,  y: -350 }, // Card 3 (shifted 20px more right compared to previous 190)
-      { x: 610,  y: -350 }  // Card 4 (shifted 40px more right compared to previous 570)
+      { x: -550, y: -300 }, // Card 1
+      { x: -175, y: -200 }, // Card 2
+      { x: 210,  y: -300 }, // Card 3
+      { x: 550,  y: -200 }  // Card 4
     ];
     
-    const cards = document.querySelectorAll('.about-capability-card');
+    // Grab all inner card elements (the glass cards inside the wrappers)
+    const innerCards = document.querySelectorAll('.about-capability-card');
     
-    // Create a timeline with ScrollTrigger (pinned for 1000px of scroll)
-    const tl = gsap.timeline({
+    // Create a scrubbed timeline that pins the section and animates the inner cards
+    const mainTL = gsap.timeline({
       scrollTrigger: {
         trigger: '#about-capability-cards',
         start: 'top top',
@@ -148,21 +164,17 @@
       }
     });
     
-    // Animate each card with a slight stagger to avoid overlapping as they emerge
-    cards.forEach((card, i) => {
-      tl.fromTo(card, 
-        { x: 0, y: 0, scale: 0.5, rotationY: 180 },
-        { 
-          x: finalPositions[i].x, 
-          y: finalPositions[i].y, 
-          scale: 1.2, 
-          rotationY: 0, 
-          ease: 'power2.inOut'
-        },
-        i * 0.1 // stagger start times by 0.1 seconds each
+    // Animate each inner card from a lower starting state (y: 50) with a flip,
+    // to its final (x, y) state.
+    innerCards.forEach((card, i) => {
+      mainTL.fromTo(card, 
+        { x: 0, y: 100, scale: 0.5, rotationY: 180 },
+        { x: finalPositions[i].x, y: finalPositions[i].y, scale: 1.2, rotationY: 0, ease: 'power2.inOut' },
+        i * 0.1 // stagger start times slightly
       );
     });
     
+    // Animate the bag container scaling as the cards emerge
     gsap.to('.bag-container', {
       scrollTrigger: {
         trigger: '#about-capability-cards',
@@ -174,6 +186,7 @@
       ease: 'power2.inOut'
     });
     
+    // Animate the project popup text
     gsap.timeline({
       scrollTrigger: {
         trigger: '#about-capability-cards',
@@ -186,9 +199,17 @@
       { opacity: 0, y: 20, scale: 0.8 },
       { opacity: 1, y: -10, scale: 1, ease: 'power2.out' }
     )
-    .to('#projectPopup', 
-      { opacity: 0, y: -40, ease: 'power2.in' }
-    );
+    .to('#projectPopup', { opacity: 0, y: -40, ease: 'power2.in' });
+    
+    // Start a continuous bobbing tween on the card wrappers so the WHOLE card bobs,
+    // even during scrolling.
+    gsap.to('.card-wrapper', {
+      y: '+=20',       // bob 20px down relative to its current position
+      duration: 0.5,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true
+    });
   </script>
 </body>
 </html>
