@@ -9,7 +9,6 @@ body {
     /* background-color: rgb(36, 36, 36); */
     color: white;
     /* background-image: url("../vectors/back01.png"); */
-    background-color: #242424; /* Fallback background color */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -17,11 +16,11 @@ body {
 }
 
 .navbar {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     width: 100%;
-    padding: 2%;
     display: block;
     position: absolute;
+    z-index: 100;
 }
 
 .navbar .logo {
@@ -30,18 +29,55 @@ body {
     font-weight: lighter;
     color: white;
     font-size: 2vw;
-
 }
-
-.navbar .get-started {
-    color: white;
-    font-family: 'Zain', cursive;
-    font-weight: lighter;
+.logo-img{
+    display: inline-block;
+    height: 8vw;
+    width: auto;
+}
+.get-started{
+    position: relative;
+    display: inline-block;
     float: right;
-    font-size: 2vw;
+    height: 10vh;
+    width: auto;
+    border: 1px solid white;
+    overflow: hidden;
 }
-
-.first-view {
+.get-started::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -2vh;
+    left: -2vw;
+    background: rgb(5, 113, 220);
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+  .get-started{
+    z-index: 12;
+  }
+  .get-started:hover span {
+    color: white;
+  }
+  
+  .get-started:hover::before {
+    float: right;
+    width: 300px;
+    height: 300px;
+  }
+.first-view{
+    display: block;
+    height: 100vh;
+    width: auto;
+    overflow: hidden;
+    background-color: #242424;
+    /* z-index: -1; */
+    contain: paint;
+    overflow: hidden;
+}
+.title-box {
 
     display: flex;
     justify-content: center;
@@ -54,7 +90,8 @@ body {
     /* border: 5px solid blue; */
 }
 
-.first-view-title {
+.title-box-title {
+    z-index: 10;
     font-family: 'Gabarito', sans-serif;
     font-weight: 800;
     font-size: 6vw;
@@ -84,11 +121,12 @@ body {
 
 }
 
-.first-view-subtitle {
+.title-box-subtitle {
     font-family: 'Zain', cursive;
     width: 60%;
     font-size: 2vw;
     margin: 1vw;
+    z-index: 10;
 }
 
 
@@ -106,7 +144,7 @@ body {
     width: auto;
     transform: rotate(15deg);
     /* width: 20%; */
-    z-index: -1;
+    z-index: 1;
     transition: 1s;
     animation: move 2s infinite linear;
 }
@@ -119,7 +157,7 @@ body {
     width: auto;
     transform: rotate(-5deg);
     /* width: 20%; */
-    z-index: -1;
+    z-index: 1;
     transition: 1s;
 }
 .product .shampoo{
@@ -131,9 +169,89 @@ body {
     height: 30vw;
     width: auto;
     transform: rotate(20deg);
-    z-index: -1;
+    z-index: 1;
+    transition: 1s;
+}
+.product .lays{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 10vh;
+    left: 80vw;
+    display: block;
+    height: 30vw;
+    width: auto;
+    transform: rotate(-40deg);
+    z-index: 2;
+    transition: 1s;
+}
+.product .chips{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 0vh;
+    left: 70vw;
+    display: block;
+    height: 15vw;
+    width: auto;
+    transform: rotate(-40deg);
+    z-index: 1;
+    transition: 1s;
+}
+
+.product .mamaearth{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 65vh;
+    left: 02vw;
+    display: block;
+    height: 30vw;
+    width: auto;
+    transform: rotate(40deg);
+    z-index: 1;
+    transition: 1s;
+}
+.product .himalaya{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 75vh;
+    left: 15vw;
+    display: block;
+    height: 20vw;
+    width: auto;
+    transform: rotate(30deg);
+    z-index: 1;
+    transition: 1s;
+}
+.product .fogg{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 60vh;
+    left: 80vw;
+    display: block;
+    height: 30vw;
+    width: auto;
+    transform: rotate(-30deg);
+    z-index: 1;
+    transition: 1s;
+}
+.product .dettol{
+    /* border: 1px solid white; */
+    position: absolute;
+    top: 80vh;
+    left: 70vw;
+    display: block;
+    height: 20vw;
+    width: auto;
+    transform: rotate(50deg);
+    z-index: 1;
     transition: 1s;
 }
 @keyframes move {
     
+}
+
+.sample{
+    display: block;
+    height: 100vh;
+    width: auto;
+    background-color: antiquewhite;
 }
