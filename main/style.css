@@ -35,38 +35,80 @@ body {
     height: 8vw;
     width: auto;
 }
-.get-started{
+.logo-img-intext{
+    display: inline;
+    height: 2.6vw;
+    margin-right: 0.5vw;
+    width: auto;
+}
+/* nav{
+    padding: 5vw 0vw;
+    height : 100px;
+    width : 100%;   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+    .nav-part2 {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        } */
+.get-started::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 5px solid blueviolet;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    translate: -50% -50%;
+}
+.get-started {
+    margin: 1.4vw;
+    position: relative;
+    float: right;
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: all ease 0.4s;
+    font-size: 1.5vw;
+    font-family: 'Gabarito', cursive;
     position: relative;
     display: inline-block;
-    float: right;
-    height: 10vh;
-    width: auto;
-    border: 1px solid white;
     overflow: hidden;
 }
-.get-started::before {
-    position: absolute;
+.get-started::after {
     content: "";
-    width: 0;
-    height: 0;
-    top: -2vh;
-    left: -2vw;
-    background: rgb(5, 113, 220);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    left: 0;
+    z-index: -1;
+    bottom: -100%;
     border-radius: 50%;
-    transition: 0.5s;
-  }
-  .get-started{
-    z-index: 12;
-  }
-  .get-started:hover span {
-    color: white;
-  }
-  
-  .get-started:hover::before {
-    float: right;
-    width: 300px;
-    height: 300px;
-  }
+    transition: all ease 0.4s;
+}
+.get-started:hover{
+    color: #242424;
+}
+.get-started:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+/* .nav-part2 h4 a{
+    color: #000000bb;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+.nav-part2 h4:hover a{
+    color:white;
+} */
 .first-view{
     display: block;
     height: 100vh;
@@ -124,7 +166,7 @@ body {
 .title-box-subtitle {
     font-family: 'Zain', cursive;
     width: 60%;
-    font-size: 2vw;
+    font-size: 2.6vw;
     margin: 1vw;
     z-index: 10;
 }
