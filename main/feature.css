@@ -1,4 +1,7 @@
 /* Reset & Basic Setup */
+.second-view{
+  position: relative;
+}
 .scroll-section {
   height: 200vh;
   position: relative;
@@ -53,8 +56,8 @@
   /* Bag container (stays on top) */
   .bag-container {
     /* border: 1px solid black; */
-    position: fixed;
-    bottom: -10vw;
+    position: absolute;
+    bottom: 40vw;
     left: 60vw;
     transform: translateX(-50%);
     height: 50vh;

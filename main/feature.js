@@ -35,34 +35,16 @@ gsap.registerPlugin(ScrollTrigger);
     });
     
     // Animate the bag container scaling as the cards emerge
-    gsap.to('.bag-container', {
-      scrollTrigger: {
-        trigger: '#about-capability-cards',
-        start: 'top top',
-        end: '+=1000',
-        scrub: true,
-        // pin: true,
-        // onEnter: () => gsap.to('.bag-container', { position: 'fixed', bottom: '0' }),
-        // onLeave: () => gsap.to('.bag-container', { position: 'absolute', bottom: '0' })
-      },
-      scale: 1.2,
-      ease: 'power2.inOut'
-    });
-    
-    // Animate the project popup text
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: '#about-capability-cards',
-        start: 'top 90%',
-        end: 'top 60%',
-        scrub: true
-      }
-    })
-    .fromTo('#projectPopup', 
-      { opacity: 0, y: 20, scale: 0.8 },
-      { opacity: 1, y: -10, scale: 1, ease: 'power2.out' }
-    )
-    .to('#projectPopup', { opacity: 0, y: -40, ease: 'power2.in' });
+    // gsap.to('.bag-container', {
+    //   scrollTrigger: {
+    //     trigger: '#about-capability-cards',
+    //     start: 'top top',
+    //     end: '0',
+    //     scrub: true,
+    //   },
+    //   // scale: 1.2,
+    //   // ease: 'power2.inOut'
+    // });
     
     // Start a continuous bobbing tween on the card wrappers so the WHOLE card bobs,
     // even during scrolling.
