@@ -14,19 +14,18 @@
   <style>
     /* Styles for the 3D Toothpaste Animation */
     /* (These styles come from your inline code snippet) */
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      overflow-x: hidden;
-    }
+    
     #container {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-      /* z-index: 10; */
-      /* background-color: blue; */
-    }
+    position: absolute;
+    /* Remove the full viewport width/height */
+    width: 500px;  /* or whatever size you want */
+    height: 500px;
+    /* These can be adjusted to position wherever you want */
+    top: 0;  
+    left: 0;
+    pointer-events: none; /* allows clicking through */
+    z-index: 10; /* adjust this to control layering */
+}
     .cool-gradient {
       background: linear-gradient(45deg, #ff6ec4, #7873f5);
       background-clip: text;
@@ -40,7 +39,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      /* z-index: 10; */
       opacity: 0;
     }
     #big-splash {
@@ -123,12 +121,11 @@
     <img src="bagnew.png" alt="Shopping Bag" />
     <div class="project-popup" id="projectPopup">OUR PROJECT NAME</div>
   </div>
-  <!-- <div id="sample"></div> -->
-
   <!-- 3D TOOTHPASTE Section -->
   <!-- This section comes from your toothpaste animation code -->
   
   <!-- this is toothpaste container -->
+   <div id="sample"></div>
   <div id="container"></div>
 
   <div id="big-splash-container">
@@ -158,7 +155,7 @@
 
     function init() {
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x000000);
+      // scene.background = new THREE.Color(0x000000);
 
       camera = new THREE.PerspectiveCamera(
         45,
@@ -167,8 +164,11 @@
         100
       );
       camera.position.set(0, 0, 5);
-
-      renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer = new THREE.WebGLRenderer({ 
+    antialias: true,
+    alpha: true  // Add this line
+});
+renderer.setClearColor(0x000000, 0); // Add this line for full transparency
       renderer.setSize(window.innerWidth, window.innerHeight);
       document.getElementById('container').appendChild(renderer.domElement);
 
