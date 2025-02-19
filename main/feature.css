@@ -57,7 +57,7 @@
   .bag-container {
     /* border: 1px solid black; */
     position: absolute;
-    bottom: 40vw;
+    bottom: -10vw;
     left: 60vw;
     transform: translateX(-50%);
     height: 50vh;
