@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="../anas ka toothpaste/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="feature.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -23,6 +24,8 @@
       width: 100vw;
       height: 100vh;
       position: relative;
+      /* z-index: 10; */
+      /* background-color: blue; */
     }
     .cool-gradient {
       background: linear-gradient(45deg, #ff6ec4, #7873f5);
@@ -37,7 +40,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
-      z-index: 10;
+      /* z-index: 10; */
       opacity: 0;
     }
     #big-splash {
@@ -85,7 +88,42 @@
       </h3>
     </div>
   </div>
-  <div id="sample"></div>
+
+  <div class="scroll-section">
+    <section id="about-capability-cards">
+      <!-- Each card is wrapped in a .card-wrapper -->
+      <div class="card-wrapper">
+        <div class="about-capability-card card1">
+          Clear Ingredient Breakdown<br>
+          <small>Understand product labels easily with simplified explanations.</small>
+        </div>
+      </div>
+      <div class="card-wrapper">
+        <div class="about-capability-card card2">
+          Personalized Recommendations<br>
+          <small>Get tailored suggestions based on your needs.</small>
+        </div>
+      </div>
+      <div class="card-wrapper">
+        <div class="about-capability-card card3">
+          Authentic Product Ratings<br>
+          <small>Data-backed ratings for reliable choices.</small>
+        </div>
+      </div>
+      <div class="card-wrapper">
+        <div class="about-capability-card card4">
+          Community Database<br>
+          <small>User-driven product information database.</small>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="bag-container">
+    <img src="bagnew.png" alt="Shopping Bag" />
+    <div class="project-popup" id="projectPopup">OUR PROJECT NAME</div>
+  </div>
+  <!-- <div id="sample"></div> -->
 
   <!-- 3D TOOTHPASTE Section -->
   <!-- This section comes from your toothpaste animation code -->
@@ -107,6 +145,7 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="feature.js"></script>
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
