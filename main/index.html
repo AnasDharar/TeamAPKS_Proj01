@@ -35,7 +35,7 @@
     }
 
     .containerkapapa {
-      position: relative;
+      position: absolute;
 
     }
 
@@ -111,41 +111,41 @@
   <!-- ----------------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------------- -->
-<div class="second-view">
-  <div class="scroll-section">
-    <section id="about-capability-cards">
-      <!-- Each card is wrapped in a .card-wrapper -->
-      <div class="card-wrapper">
-        <div class="about-capability-card card1">
-          Clear Ingredient Breakdown<br>
-          <small>Understand product labels easily with simplified explanations.</small>
+  <div class="second-view">
+    <div class="scroll-section">
+      <section id="about-capability-cards">
+        <!-- Each card is wrapped in a .card-wrapper -->
+        <div class="card-wrapper">
+          <div class="about-capability-card card1">
+            Clear Ingredient Breakdown<br>
+            <small>Understand product labels easily with simplified explanations.</small>
+          </div>
         </div>
-      </div>
-      <div class="card-wrapper">
-        <div class="about-capability-card card2">
-          Personalized Recommendations<br>
-          <small>Get tailored suggestions based on your needs.</small>
+        <div class="card-wrapper">
+          <div class="about-capability-card card2">
+            Personalized Recommendations<br>
+            <small>Get tailored suggestions based on your needs.</small>
+          </div>
         </div>
-      </div>
-      <div class="card-wrapper">
-        <div class="about-capability-card card3">
-          Authentic Product Ratings<br>
-          <small>Data-backed ratings for reliable choices.</small>
+        <div class="card-wrapper">
+          <div class="about-capability-card card3">
+            Authentic Product Ratings<br>
+            <small>Data-backed ratings for reliable choices.</small>
+          </div>
         </div>
-      </div>
-      <div class="card-wrapper">
-        <div class="about-capability-card card4">
-          Community Database<br>
-          <small>User-driven product information database.</small>
+        <div class="card-wrapper">
+          <div class="about-capability-card card4">
+            Community Database<br>
+            <small>User-driven product information database.</small>
+          </div>
         </div>
-      </div>
-      
+
         <div class="bag-container">
           <img src="bagnew.png" alt="Shopping Bag" />
         </div>
-    </section>
+      </section>
+    </div>
   </div>
-</div>
   <!-- ----------------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------------- -->
   <!-- ----------------------------------------------------------------------------------------------------------- -->
@@ -287,26 +287,6 @@
       // Lower the droplets so they spawn from a lower cap
       const capLocal = new THREE.Vector3(0, 0.1, 0.8);
       toothpasteModel.localToWorld(capLocal);
-
-      // Fire off droplets
-      // dropletsGroup.children.forEach((drop, i) => {
-      //   const delay = i * 0.3;
-      //   tl.set(drop, { visible: true }, +=${delay});
-      //   tl.set(drop.position, { x: capLocal.x, y: capLocal.y, z: capLocal.z });
-      //
-      //   const randX = (Math.random() - 0.5) * 2;
-      //   const randY = (Math.random() - 0.5) * 2;
-      //   const randZ = Math.random() * 1.5;
-      //
-      //   tl.to(drop.position, {
-      //     x: capLocal.x + randX,
-      //     y: capLocal.y + randY,
-      //     z: capLocal.z + randZ,
-      //     duration: 1,
-      //     ease: 'power2.out'
-      //   }, '<');
-      // });
-
       // Show big splash image & text
       tl.to('#big-splash-container', {
         duration: 0.8,

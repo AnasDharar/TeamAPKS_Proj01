@@ -3,16 +3,17 @@
   position: relative;
 }
 .scroll-section {
-  height: 200vh;
+  height: auto;
   position: relative;
   z-index: 1;
-  /* contain: paint; */
-  /* overflow: hidden; */
+  overflow: hidden;
+  /* border: 2px solid blue; */
 }
 /* Pinned section for the cards */
 #about-capability-cards {
+  /* border: 3px solid red; */
   position: relative;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   margin: 0 auto;
   z-index: 3;
@@ -24,8 +25,6 @@
   /* Wrapper for each card (for continuous bobbing) */
   .card-wrapper {
     position: absolute;
-    /* width: 325px; 
-    height: 350px; */
     width: 22vw;
     height: 25vw;
     top: 50%;
