@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Toothpaste Spilling Animation</title>
+  <!-- Font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- 1) The container where our THREE.js scene (canvas) is pinned -->
+  <div id="container"></div>
+
+  <!-- 2) The big purple splash image & text that appear near the end -->
+  <div id="big-splash-container">
+    <img id="big-splash" src="image.png" alt="Purple Splash"/>
+    <div id="splash-text">
+      Know more about our item 
+      <span class="cool-gradient">personalized rating</span>
+      system
+    </div>
+    
+
+
+  </div>
+
+
+
+  <!-- 3) Scripts: Three.js, GLTFLoader, GSAP, ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="script.js">
+  </script>
+</body>
+</html>

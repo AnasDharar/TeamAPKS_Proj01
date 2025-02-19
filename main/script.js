@@ -1,114 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACM Hackathon</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../anas ka toothpaste/style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <style>
-    /* Styles for the 3D Toothpaste Animation */
-    /* (These styles come from your inline code snippet) */
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      overflow-x: hidden;
-    }
-    #container {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-    }
-    .cool-gradient {
-      background: linear-gradient(45deg, #ff6ec4, #7873f5);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: none;
-    }
-    #big-splash-container {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      z-index: 10;
-      opacity: 0;
-    }
-    #big-splash {
-      width: 600px;
-      height: auto;
-    }
-    #splash-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #1B3B6F;
-      font-family: 'Inter Tight', Arial, sans-serif;
-      font-size: 2em;
-      text-align: center;
-      font-weight: bold;
-      pointer-events: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="first-view">
-    <div class="navbar">
-      <div class="logo">
-        <img class="logo-img" src="../vectors/health_rate_trans.png" alt="">
-      </div>
-      <span class="get-started">Get Started</span>
-    </div>
-    <div class="prods">
-      <div class="product"><img class="oreo" src="../vectors/oreo.png" alt=""></div>
-      <div class="product"><img class="bourbon" src="../vectors/bourbon.png" alt=""></div>
-      <div class="product"><img class="shampoo" src="../vectors/shampoo.png" alt=""></div>
-      <div class="product"><img class="lays" src="../vectors/lays.png" alt=""></div>
-      <div class="product"><img class="chips" src="../vectors/chips.png" alt=""></div>
-      <div class="product"><img class="dettol" src="../vectors/dettol.png" alt=""></div>
-      <div class="product"><img class="mamaearth" src="../vectors/mamaearth.png" alt=""></div>
-      <div class="product"><img class="himalaya" src="../vectors/himalaya.png" alt=""></div>
-      <div class="product"><img class="fogg" src="../vectors/fogg.png" alt=""></div>
-    </div>
-    <div class="title-box">
-      <h1 class="title-box-title">Whats hidden in your loved products?</h1>
-      <h3 class="title-box-subtitle">
-        <img class="logo-img-intext" src="../vectors/health_rate_oneline.png" alt="">
-        is a wellness-focused platform that provides personalized ratings for health, skincare, and food products, helping users make informed choices based on quality and value
-      </h3>
-    </div>
-  </div>
-  <div id="sample"></div>
-
-  <!-- 3D TOOTHPASTE Section -->
-  <!-- This section comes from your toothpaste animation code -->
-  
-  <!-- this is toothpaste container -->
-  <div id="container"></div>
-
-  <div id="big-splash-container">
-    <img id="big-splash" src="image.png" alt="Purple Splash"/>
-    <div id="splash-text">
-      Know more about our item 
-      <span class="cool-gradient">personalized rating</span>
-      system
-    </div>
-  </div>
-
-  <!-- Scripts: Three.js, GLTFLoader, GSAP, and ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
     let scene, camera, renderer;
     let toothpasteModel, toothpasteGroup;
@@ -144,7 +34,7 @@
 
       // Load Toothpaste Model
       const loader = new THREE.GLTFLoader();
-      loader.load('toothpaste.gltf', (gltf) => {
+      loader.load('../toothpaste_req/toothpaste.gltf', (gltf) => {
         toothpasteModel = gltf.scene;
 
         // Group to move/scale the toothpaste
@@ -220,13 +110,13 @@
       // Fire off droplets
       // dropletsGroup.children.forEach((drop, i) => {
       //   const delay = i * 0.3;
-      //   tl.set(drop, { visible: true }, +=${delay});
+      //   tl.set(drop, { visible: true }, `+=${delay}`);
       //   tl.set(drop.position, { x: capLocal.x, y: capLocal.y, z: capLocal.z });
-      //
+
       //   const randX = (Math.random() - 0.5) * 2;
       //   const randY = (Math.random() - 0.5) * 2;
       //   const randZ = Math.random() * 1.5;
-      //
+
       //   tl.to(drop.position, {
       //     x: capLocal.x + randX,
       //     y: capLocal.y + randY,
@@ -268,6 +158,3 @@
       requestAnimationFrame(animate);
       renderer.render(scene, camera);
     }
-  </script>
-</body>
-</html>
