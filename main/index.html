@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../anas ka toothpaste/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="feature.css">
+  <link rel="stylesheet" href="ratingsys.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Pacifico&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap"
@@ -17,26 +18,17 @@
     rel="stylesheet">
   <style>
     /* Styles for the 3D Toothpaste Animation */
-    /* (These styles come from your inline code snippet) */
-
+    /* Updated #container to be fixed so it stays in place during scroll */
     #container {
-      position: absolute;
-      /* Remove the full viewport width/height */
+      position: fixed;
       width: 500px;
-      /* or whatever size you want */
       height: 500px;
-      /* These can be adjusted to position wherever you want */
       top: 0;
       left: 0;
       pointer-events: none;
-      /* allows clicking through */
       z-index: 10;
-      /* adjust this to control layering */
-    }
-
-    .containerkapapa {
-      position: absolute;
-
+      display: none;
+      /* border: 1px solid red; */
     }
 
     .cool-gradient {
@@ -145,19 +137,8 @@
         </div>
       </section>
     </div>
-  </div>
-  <!-- ----------------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------------- -->
-  <!-- ----------------------------------------------------------------------------------------------------------- -->
-  <!-- 3D TOOTHPASTE Section -->
-  <!-- This section comes from your toothpaste animation code -->
 
-  <!-- this is toothpaste container -->
-  <div id="sample"></div>
-  <div class="containerkapapa">
     <div id="container"></div>
-
 
     <div id="big-splash-container">
       <img id="big-splash" src="image.png" alt="Purple Splash" />
@@ -168,7 +149,99 @@
       </div>
     </div>
   </div>
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- 3D TOOTHPASTE Section -->
+  <!-- This section comes from your toothpaste animation code -->
 
+  <!-- this is toothpaste container -->
+  <!-- <div id="sample"></div> -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+  <!-- ----------------------------------------------------------------------------------------------------------- -->
+ <div class="third-view">
+  <div class="container1">
+    <div>
+      <div id="First_point_head">
+        Algorithm-Driven Personalized Ratings
+      </div>
+      <div id="First_point_descrip1">
+        Our research-backed algorithm considers quality, ingredients, and deviations from ideal standards to provide a reliable product rating.
+      </div>
+      <br>
+      <div id="First_point_descrip2">
+        It ensures accuracy for everyday items by assessing ideal chemical levels and the risks of excess, helping consumers make informed and healthier choices with confidence.
+      </div>
+    </div>
+    <div id="First_point_descrip3">
+      <img src="first_image.png" alt="Image">
+    </div>
+  </div>
+
+  <!-- 2nd point starts here -->
+  <div class="container2">
+    <div>
+      <div id="Second_point_head">
+        Comprehensive Product Comparisons
+      </div>
+      <div id="Second_point_descrip1">
+        Our system allows users to compare products side by side using standardized metrics, simplifying decision-making.
+      </div>
+      <br>
+      <div id="Second_point_descrip2">
+        It systematically evaluates key properties, providing a clear breakdown of pros and cons. With this structured assessment, users can easily identify the best options based on their needs, ensuring they make well-informed and value-driven choices.
+      </div>
+    </div>
+    <div id="Second_point_descrip3">
+      <img src="Second_image.png" alt="Image">
+    </div>
+  </div>
+  <!-- 2nd point ends here -->
+
+
+  <!-- 3rd point -->
+<div class="container3">
+  <div>
+    <div id="Third_point_head">
+      Data-Driven Transparency
+    </div>
+    <div id="Third_point_descrip1">
+      Our ratings and recommendations rely on data-driven analysis rather than marketing claims, ensuring greater trust among consumers. 
+    </div>
+    <br>
+    <div id="Third_point_descrip2">
+      To maintain transparency, we provide users with access to our assessment data and rating algorithm. This openness allows users to see exactly how each product is evaluated, reinforcing confidence in our process and recommendations.
+    </div>
+  </div>
+  <div id="Third_point_descrip3">
+    <img src="Third_image.webp" alt="Image">
+  </div>
+</div>
+
+  <!-- 3rd point ends here -->
+
+  <!-- 4th point -->
+  <div class="container4">
+    <div>
+      <div id="Forth_point_head">
+        Empowerment Against Misleading Marketing
+      </div>
+      <div id="Forth_point_descrip1">
+        We decode misleading buzzwords like “healthy” and “organic,” helping users see beyond deceptive marketing tactics. 
+      </div>
+      <br>
+      <div id="Forth_point_descrip2">
+        Many brands highlight claims like "99% Glycerin" or "Sodium Bicarbonate-Free," but few understand their true impact. Our platform educates consumers, ensuring they make informed choices based on facts rather than persuasive but vague product labels.
+      </div>
+    </div>
+    <div id="Forth_point_descrip3">
+      <img src="Forth_image.png" alt="Image">
+    </div>
+  </div>
+ </div>
   <!-- Scripts: Three.js, GLTFLoader, GSAP, and ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
@@ -176,6 +249,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="feature.js"></script>
   <script>
+    window.addEventListener('scroll', function() {
+      if(window.scrollY > window.innerHeight*4.8){
+        document.getElementById('container').style.display = 'block';
+      }
+    });
     gsap.registerPlugin(ScrollTrigger);
 
     let scene, camera, renderer;
@@ -187,7 +265,6 @@
 
     function init() {
       scene = new THREE.Scene();
-      // scene.background = new THREE.Color(0x000000);
 
       camera = new THREE.PerspectiveCamera(
         45,
@@ -198,9 +275,9 @@
       camera.position.set(0, 0, 5);
       renderer = new THREE.WebGLRenderer({
         antialias: true,
-        alpha: true  // Add this line
+        alpha: true
       });
-      renderer.setClearColor(0x000000, 0); // Add this line for full transparency
+      renderer.setClearColor(0x000000, 0);
       renderer.setSize(window.innerWidth, window.innerHeight);
       document.getElementById('container').appendChild(renderer.domElement);
 
@@ -244,7 +321,7 @@
       window.addEventListener('resize', onWindowResize);
     }
 
-    /* FIX #2: Increase droplet size from 0.03 to 0.06 */
+    // Increase droplet size from 0.03 to 0.06
     function createDroplets3D(count) {
       const group = new THREE.Group();
       const geometry = new THREE.SphereGeometry(0.06, 16, 16);
@@ -257,56 +334,84 @@
       return group;
     }
 
+    const finalPositions = [
+      { x: "-35vw", y: "-20vw" }, // Card 1
+      { x: "-10vw", y: "-15vw" }, // Card 2
+      { x: "15vw",  y: "-19vw" }, // Card 3
+      { x: "40vw",  y: "-14vw"}  // Card 4
+    ];
+
+    const innerCards = document.querySelectorAll('.about-capability-card');
+
     function createScrollAnimation() {
-      /* FIX #1: Increase total scroll length to 2500,
-                and each tween's duration from 0.5 to 1 for slower spin */
-      const tl = gsap.timeline({
+      // Adjust total scroll distance to cover both sections (tweak as needed)
+      const totalScrollDistance = 6500;
+
+      const mainTL = gsap.timeline({
         scrollTrigger: {
-          trigger: '#container',
+          trigger: '#about-capability-cards',
           start: 'top top',
-          end: '+=3000',
+          end: `+=${totalScrollDistance}`,
           scrub: true,
           pin: true
         }
       });
 
-      // Move toothpaste to center & slightly forward
-      tl.to(toothpasteGroup.position, {
-        y: 0,
-        z: 0.75,
-        duration: 1
+      // Inner cards animation
+      innerCards.forEach((card, i) => {
+        mainTL.fromTo(
+          card,
+          { x: 0, y: 100, scale: 0.5, rotationY: 180 },
+          { x: finalPositions[i].x, y: finalPositions[i].y, scale: 1.2, rotationY: 0, ease: 'power2.inOut', duration: 1 },
+          i * 0.1
+        );
       });
 
-      // Rotate to point at user
-      tl.to(toothpasteModel.rotation, {
-        x: Math.PI * 0.05,
-        y: Math.PI,
-        duration: 1
-      }, '<');
+      // Add a label after inner cards finish
+      mainTL.addLabel("innerCardsComplete");
 
-      // Lower the droplets so they spawn from a lower cap
-      const capLocal = new THREE.Vector3(0, 0.1, 0.8);
-      toothpasteModel.localToWorld(capLocal);
+      // Toothpaste animations start after the inner cards complete
+      mainTL.to(
+        toothpasteGroup.position,
+        { y: 0, z: 0.75, duration: 1,opacity:1, ease: 'power2.inOut' },
+        "innerCardsComplete"
+      );
+
+      mainTL.to(
+        toothpasteModel.rotation,
+        { x: Math.PI * 0.05, y: Math.PI, duration: 1, ease: 'power2.inOut' },
+        "<"
+      );
+
       // Show big splash image & text
-      tl.to('#big-splash-container', {
-        duration: 0.8,
-        opacity: 1,
-        ease: 'power2.inOut'
-      }, '+=0.5');
+      mainTL.to(
+        '#big-splash-container',
+        { duration: 0.8, opacity: 1, ease: 'power2.inOut' },
+        '+=0.5'
+      );
 
       // Hide big splash
-      tl.to('#big-splash-container', {
-        duration: 1,
-        opacity: 0,
-        ease: 'power2.inOut'
-      }, '+=1.2');
+      mainTL.to(
+        '#big-splash-container',
+        { duration: 0.5, opacity: 0, ease: 'power2.inOut' },
+        '+=0.5'
+      );
 
       // Move toothpaste away
-      tl.to(toothpasteGroup.position, {
-        y: 2,
-        duration: 1,
-        ease: 'power1.inOut'
-      }, '<');
+      mainTL.to(
+        toothpasteGroup.position,
+        { y: 2, duration: 1, ease: 'power1.inOut' },
+        '<'
+      );
+
+      // The continuous bobbing animation for card wrappers
+      gsap.to('.card-wrapper', {
+        y: '+=20',
+        duration: 0.5,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true
+      });
     }
 
     function onWindowResize() {

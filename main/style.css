@@ -295,6 +295,7 @@ body {
     position: relative;
     display: block;
     height: 100vh;
+    /* text-align: center; */
     width: auto;
     background-color: antiquewhite;
     

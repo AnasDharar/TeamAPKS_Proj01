@@ -1,0 +1,60 @@
+    /* Styles for the 3D Toothpaste Animation */
+    /* (These styles come from your inline code snippet) */
+
+    #container {
+        display: block;
+        position: absolute;
+        /* Remove the full viewport width/height */
+        width: 500px;
+        /* or whatever size you want */
+        height: 500px;
+        /* border: 2px solid black; */
+        /* These can be adjusted to position wherever you want */
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        /* allows clicking through */
+        z-index: 10;
+        /* adjust this to control layering */
+      }
+      .cool-gradient {
+        background: linear-gradient(45deg, #ff6ec4, #7873f5);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: none;
+      }
+  
+      #big-splash-container {
+      position: absolute;
+      width: 100%;  /* Add this */
+      height: 100vh;  /* Increase height */
+      /* border: 5px solid yellowgreen; */
+      top: 50%;
+      left: 50%;
+      background-image: url("image.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      opacity: 0;  /* Note: This will be animated by your GSAP timeline */
+      z-index: 10001;
+  }
+  
+  
+      #splash-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #1B3B6F;
+        font-family: 'Inter Tight', Arial, sans-serif;
+        font-size: 2em;
+        text-align: center;
+        font-weight: bold;
+        pointer-events: none;
+      }
+  
