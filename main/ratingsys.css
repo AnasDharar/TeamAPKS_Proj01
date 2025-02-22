@@ -10,6 +10,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-family: 'Gabarito';
+  font-size: 3.5vw;
   
 }
 /* 1st point styles */
@@ -33,16 +35,6 @@
     /* margin-left: 16.8%; */
     /* text-align: start; */
   }
-  #First_point_descrip2 {
-    /* margin-top: 1.5%; */
-    color: #DBDEE3;
-    font-size: 18px;
-    font-weight: 400;
-    width: 50vh;
-    /* line-height: 180%; */
-    /* margin-left: 16.8%; */
-    /* text-align: start; */
-  }
   .container-all {
     display: flex;
     /* align-items: center; */
@@ -51,17 +43,11 @@
     justify-content: space-evenly;
     width: 95vw;
     margin: 3vw auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     /* padding: 20px; */
   }
   .right{
     float: right;
-  }
-  #First_point_descrip3 {
-    /* width: 1000px; Adjust width as needed */
-    /* border-radius: 10px; */
-    /* margin-left: 10%; */
-    /* margin-right: 5%; */
   }
   /* #First_point_descrip3 img {
     width: 100%;
@@ -222,11 +208,6 @@ color: #DBDEE3;
 font-size: 18px;
 font-weight: 400;
 width: 50vh;
-/* line-height: 180%; */
-/* margin-right: 16.8%; */
-text-align: end;
-/* margin-left: -24%; */
-/* text-align: left; */
 }
 
 #Forth_point_descrip2 {
